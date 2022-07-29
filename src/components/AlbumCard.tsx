@@ -19,7 +19,7 @@ const AlbumCard: React.FC<Props> = ({ album }) => {
             <span><hr /></span>
             Photos quantity: {album.photoList.length} 
           </Card.Text>
-          <Button className="card-button mt-auto" variant="primary">Visualize Photos</Button>
+          <Button className="card-button text-light mt-auto" variant="secondary">Visualize Photos</Button>
         </Card.Body>
       </Card>
     </>

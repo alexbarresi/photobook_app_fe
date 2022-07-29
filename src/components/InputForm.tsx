@@ -21,8 +21,9 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const nativeEvent = e.nativeEvent as any;
 
+    setUserId("");
+    const nativeEvent = e.nativeEvent as any;
     const currentUserId: number =
       nativeEvent.submitter.value === "get-all-albums" ? 0 : Number(userId);
     retrieveAlbums(currentUserId);
@@ -43,7 +44,7 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
           </Form.Group>
         </Col>
         <Col xs={3} md={1} className="input-button">
-          <Button variant="secondary" type="submit" disabled={disableButton}>
+          <Button variant="success" type="submit" disabled={disableButton}>
             Search
           </Button>
         </Col>
