@@ -35,7 +35,7 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
           <Form.Group controlId="formSearchById">
             <Form.Label>Search Albums by user ID</Form.Label>
             <Form.Control
-              type="string"
+              type="number"
               placeholder="Enter user ID"
               value={userId}
               onChange={onChange}
