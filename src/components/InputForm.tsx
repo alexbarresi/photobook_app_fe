@@ -2,7 +2,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { FC, MouseEventHandler, SetStateAction, useState } from "react";
+import { useState } from "react";
 
 interface InputFormProps {
   retrieveAlbums: (a: number) => void;
@@ -15,18 +15,26 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const { value } = e.target;
-    value == null || value == '' ? setDisableButton(true) : setDisableButton(false);
+    value == null || value == ""
+      ? setDisableButton(true)
+      : setDisableButton(false);
     setUserId(value);
   };
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {    
     e.preventDefault();
+    resetInput();
 
-    setUserId("");
     const nativeEvent = e.nativeEvent as any;
     const currentUserId: number =
       nativeEvent.submitter.value === "get-all-albums" ? 0 : Number(userId);
+
     retrieveAlbums(currentUserId);
+  };
+
+  const resetInput = () => {
+    setUserId("");
+    setDisableButton(true);
   };
 
   return (
@@ -37,6 +45,7 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
             <Form.Label>Search Albums by user ID</Form.Label>
             <Form.Control
               type="number"
+              min="1"
               placeholder="Enter user ID"
               value={userId}
               onChange={onChange}

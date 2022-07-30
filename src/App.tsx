@@ -1,5 +1,6 @@
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import AlbumContainer from "./components/AlbumContainer";
+import Home from "./pages/Home";
 
 function App() {
   return (
@@ -12,7 +13,11 @@ function App() {
         </p>
       </header>
       <>
-        <AlbumContainer></AlbumContainer>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="about" element={<About />} /> */}
+      </Routes>
+        
       </>
       
     </div>

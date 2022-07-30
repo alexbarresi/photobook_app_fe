@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { AlbumType } from "../types/Album.types";
-import AlbumCard from "./AlbumCard";
-import InputForm from "./InputForm";
+import AlbumCard from "../components/AlbumCard";
+import InputForm from "../components/InputForm";
 
-function AlbumContainer() {
+function Home() {
   const [Albums, setAlbums] = useState([]);
   const [Error, setError] = useState({});
 
@@ -48,4 +48,4 @@ function AlbumContainer() {
   );
 }
 
-export default AlbumContainer;
+export default Home;
