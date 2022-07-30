@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 import { AlbumType } from "../types/Album.types";
 import AlbumCard from "../components/AlbumCard";
@@ -9,7 +9,6 @@ function Home() {
   const [Error, setError] = useState({});
 
   const retrieveAlbums = (userId?: number) => {
-    
     const url: string =
       userId != null && userId > 0
         ? `https://localhost:7101/API/Photobook/${userId}`
@@ -22,9 +21,15 @@ function Home() {
       .then((response) => response.json())
       .then((res) => {
         setAlbums(res);
+        window.sessionStorage.setItem("Albums", JSON.stringify(res));
       })
       .catch((err) => setError(err));
   };
+
+  useEffect(() => {
+    if (window.sessionStorage.getItem("Albums") != null && window.sessionStorage.getItem("Albums") !== '')
+      setAlbums(JSON.parse(window.sessionStorage.getItem("Albums") as string));
+  }, []);
 
   return (
     <>
