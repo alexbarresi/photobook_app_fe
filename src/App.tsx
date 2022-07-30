@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./styles/App.css";
 import Home from "./pages/Home";
+import PhotoView from "./pages/PhotoView";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <>
       <Routes>
         <Route path="/" element={<Home />} />
-        {/* <Route path="about" element={<About />} /> */}
+        <Route path="/photoView/" element={<PhotoView />} />
       </Routes>
         
       </>

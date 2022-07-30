@@ -1,35 +1,41 @@
-import { useState } from "react";
-import { Container, Row } from "react-bootstrap";
-import { AlbumType } from "../types/Album.types";
-import AlbumCard from "../components/AlbumCard";
-import InputForm from "../components/InputForm";
+import { useEffect, useState } from "react";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import { Link, useLocation, useParams } from "react-router-dom";
+import Photo from "../components/Photo";
+import { PhotoType } from "../types/Photo.types";
 
 function PhotoView() {
-  const [Albums, setAlbums] = useState([]);
-  const [Error, setError] = useState({});
+  const [Photos, setPhotos] = useState<PhotoType[]>([]);
+  const [AlbumTitle, setAlbumTitle] = useState("");
+  const location: any = useLocation();
 
-  const retrieveAlbums = (userId?: number) => {
-    const url: string =
-      userId != null && userId != 0
-        ? `https://localhost:7101/API/Photobook/${userId}`
-        : "https://localhost:7101/API/Photobook";
-
-    fetch(url, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((response) => response.json())
-      .then((res) => {
-        console.log(setAlbums(res));
-      })
-      .catch((err) => setError(err));
-  };
+  useEffect(() => {
+    // console.log("Photos: ", location.state?.photoList);
+    const photos: PhotoType[] = location.state?.photoList;
+    const albumTitle: string = location.state?.title;
+    setAlbumTitle(albumTitle);
+    setPhotos(photos);
+  }, []);
 
   return (
     <>
       <Container>
+        <Row className="d-flex justify-content-center justify-content-md-start mb-4">
+          <Col lg={2}>
+            <Link to={"/"}>
+              <Button className="btn btn-primary btn-lg"> Back</Button>
+            </Link>
+          </Col>
+
+          <Col>
+            <h2>{AlbumTitle}</h2>
+          </Col>
+
+        </Row>
         <Row className="d-flex justify-content-center justify-content-md-start">
-          Photo View Page
+          {Photos.map((photo: PhotoType) => (
+            <Photo key={photo.id} photo={photo} />
+          ))}
         </Row>
       </Container>
     </>

@@ -11,7 +11,7 @@ function Home() {
   const retrieveAlbums = (userId?: number) => {
     
     const url: string =
-      userId != null && userId != 0
+      userId != null && userId > 0
         ? `https://localhost:7101/API/Photobook/${userId}`
         : "https://localhost:7101/API/Photobook";
 
@@ -21,7 +21,7 @@ function Home() {
     })
       .then((response) => response.json())
       .then((res) => {
-        console.log(setAlbums(res));
+        setAlbums(res);
       })
       .catch((err) => setError(err));
   };

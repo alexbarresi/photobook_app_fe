@@ -1,4 +1,4 @@
-export type Photo = {
+export type PhotoType = {
   id: number;
   albumId: number;
   url: string;
