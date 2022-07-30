@@ -1,4 +1,4 @@
-import { PhotoType } from "../../types/Photo.types";
+import { PhotoType } from "../types/Photo.types";
 
 import { Card, Modal } from "react-bootstrap";
 import { useState } from "react";

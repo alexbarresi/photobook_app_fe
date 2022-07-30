@@ -1,5 +1,7 @@
-import PhotoCard from "../components/Photo/PhotoCard";
+import PhotoCard from "../components/PhotoCard";
 import { PhotoType } from "../types/Photo.types";
+import LeftArrow from '../img/left-arrow-light.png';
+
 
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
@@ -28,7 +30,7 @@ function PhotoView() {
         <Row className="d-flex justify-content-center justify-content-md-start mb-4">
           <Col lg={2}>
             <Button onClick={toPhotoView} className="btn btn-primary btn-lg">
-              Back
+              <img src={LeftArrow} /> Back
             </Button>
           </Col>
         </Row>
