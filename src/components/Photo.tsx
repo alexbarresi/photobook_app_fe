@@ -15,15 +15,6 @@ const Photo: React.FC<Props> = ({ photo }) => {
           <Card.Img className="mt-auto" variant="bottom" src={photo.thumbnailUrl} />
         </Card.Body>
       </Card>
-
-      {/* {photo.title}
-      <Image
-        src={photo.thumbnailUrl}
-        rounded
-        thumbnail
-        width={50}
-        height={50}
-      ></Image> */}
     </>
   );
 };

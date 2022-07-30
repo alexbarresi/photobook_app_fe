@@ -14,13 +14,11 @@ function App() {
         </p>
       </header>
       <>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/photoView/" element={<PhotoView />} />
-      </Routes>
-        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/photoView/" element={<PhotoView />} />
+        </Routes>
       </>
-      
     </div>
   );
 }

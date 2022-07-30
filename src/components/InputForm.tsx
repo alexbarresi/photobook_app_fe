@@ -52,14 +52,14 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
             />
           </Form.Group>
         </Col>
-        <Col xs={3} md={1} className="input-button">
+        <Col lg={1} xs={3} md={2} className="input-button">
           <Button variant="success" type="submit" disabled={disableButton}>
             Search
           </Button>
         </Col>
       </Row>
       <Row className="mt-4">
-        <Col md={2} xs={4} className="input-button">
+        <Col lg={2} md={4} xs={4} className="input-button">
           <Button value="get-all-albums" variant="primary" type="submit">
             Retrieve all albums
           </Button>
