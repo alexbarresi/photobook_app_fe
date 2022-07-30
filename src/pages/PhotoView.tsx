@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
-import { useLocation, useNavigate } from "react-router-dom";
-import Photo from "../components/Photo";
+import PhotoCard from "../components/Photo/PhotoCard";
 import { PhotoType } from "../types/Photo.types";
+
+import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Button, Col, Container, Row } from "react-bootstrap";
 
 function PhotoView() {
   const [Photos, setPhotos] = useState<PhotoType[]>([]);
@@ -36,7 +37,7 @@ function PhotoView() {
         </Row>
         <Row className="d-flex justify-content-center justify-content-lg-start">
           {Photos.map((photo: PhotoType) => (
-            <Photo key={photo.id} photo={photo} />
+            <PhotoCard key={photo.id} photo={photo} />
           ))}
         </Row>
       </Container>

@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
-import { AlbumType } from "../types/Album.types";
 import AlbumCard from "../components/AlbumCard";
 import InputForm from "../components/InputForm";
+import { AlbumType } from "../types/Album.types";
+
+import { useEffect, useState } from "react";
+import { Container, Row } from "react-bootstrap";
 
 function Home() {
   const [Albums, setAlbums] = useState([]);
