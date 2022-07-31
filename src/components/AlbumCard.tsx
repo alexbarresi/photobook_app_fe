@@ -20,7 +20,7 @@ const AlbumCard: React.FC<Props> = ({ album }) => {
 
   return (
     <>
-      <Card style={{ width: "16rem", margin: "2%" }}>
+      <Card className="main-card">
         <Card.Body className="d-flex flex-column">
           <Card.Title className="card-title">{album.title}</Card.Title>
           <span>

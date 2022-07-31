@@ -15,19 +15,14 @@ const PhotoCard: React.FC<Props> = ({ photo }) => {
 
   return (
     <>
-      <Card onClick={handleShow} style={{ width: "16rem", margin: "2%" }}>
+      <Card className="main-card photo-card" onClick={handleShow}>
         <Card.Body className="d-flex flex-column">
           <Card.Title className="card-title">{photo.title}</Card.Title>
           <Card.Img className="mt-auto" src={photo.thumbnailUrl} />
         </Card.Body>
       </Card>
 
-      <Modal
-        show={show}
-        size="lg"
-        onHide={handleClose}
-        keyboard={false}
-      >
+      <Modal show={show} size="lg" onHide={handleClose} keyboard={false}>
         <Modal.Header closeButton onClick={handleClose}>
           <Modal.Title></Modal.Title>
         </Modal.Header>
