@@ -36,16 +36,18 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <Container>
-      <Row>
-        <InputForm retrieveAlbums={retrieveAlbums}></InputForm>
-      </Row>
-      <Row className="d-flex justify-content-center justify-content-md-start">
-        {Albums.map((album: AlbumType) => (
-          <AlbumCard key={album.id} album={album} />
-        ))}
-      </Row>
-    </Container>
+    <>
+      <Container>
+        <Row>
+          <InputForm retrieveAlbums={retrieveAlbums}></InputForm>
+        </Row>
+        <Row className="mt-4 justify-content-center justify-content-md-start">
+          {Albums.map((album: AlbumType) => (
+            <AlbumCard key={album.id} album={album} />
+          ))}
+        </Row>
+      </Container>
+    </>
   );
 };
 

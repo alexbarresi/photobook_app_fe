@@ -5,7 +5,7 @@ export interface AlbumCardProps {
   album: AlbumType;
 }
 
-export interface PhotoCard {
+export interface PhotoCardProps {
   photo: PhotoType;
 }
 

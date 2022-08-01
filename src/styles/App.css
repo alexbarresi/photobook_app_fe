@@ -26,7 +26,7 @@
 }
 
 .card-title {
-  min-height: 4%;
+  min-height: 75px;
 }
 
 .card-button {
@@ -38,17 +38,35 @@ button.btn {
 }
 
 .main-card {
+  min-height: 250px;
   width: 16rem;
   margin: 2%;
 }
 
+.album-column:last-child {
+  padding-left: 0;
+}
+
 .main-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
+
+.photo-card {
+  min-height: 370px;
+  width: 16rem;
+  margin: 2%;
+}
+
+.photo-card:last-child {
+  flex: none;
 }
 
 .main-card.photo-card:hover {
   cursor: pointer;
 }
 
-
+.my-2 {
+  flex-basis: 33.3%;
+  min-width: 15.3%;
+ }

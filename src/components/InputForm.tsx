@@ -28,34 +28,34 @@ const InputForm: React.FC<InputFormProps> = ({ retrieveAlbums }) => {
   };
 
   return (
-    <Form onSubmit={onSubmit}>
-      <Row md={5}>
-        <Col xs={8} md={3}>
-          <Form.Group controlId="formSearchById">
-            <Form.Label>Search Albums by user ID</Form.Label>
-            <Form.Control
-              type="number"
-              min="1"
-              placeholder="Enter user ID"
-              value={userId}
-              onChange={onChange}
-            />
-          </Form.Group>
-        </Col>
-        <Col lg={1} xs={3} md={2} className="input-button">
-          <Button variant="success" type="submit" disabled={!userId}>
-            Search
-          </Button>
-        </Col>
-      </Row>
-      <Row className="mt-4">
-        <Col lg={2} md={4} xs={4} className="input-button">
-          <Button value="get-all-albums" variant="primary" type="submit">
-            Retrieve all albums
-          </Button>
-        </Col>
-      </Row>
-    </Form>
+      <Form onSubmit={onSubmit}>
+        <Row md={5}>
+          <Col xs={8} md={3}>
+            <Form.Group controlId="formSearchById">
+              <Form.Label>Search Albums by user ID</Form.Label>
+              <Form.Control
+                type="number"
+                min="1"
+                placeholder="Enter user ID"
+                value={userId}
+                onChange={onChange}
+              />
+            </Form.Group>
+          </Col>
+          <Col lg={1} xs={3} md={2} className="input-button">
+            <Button variant="success" type="submit" disabled={!userId}>
+              Search
+            </Button>
+          </Col>
+        </Row>
+        <Row className="mt-4">
+          <Col lg={2} md={4} xs={4} className="input-button">
+            <Button value="get-all-albums" variant="primary" type="submit">
+              Retrieve all albums
+            </Button>
+          </Col>
+        </Row>
+      </Form>
   );
 };
 
