@@ -78,3 +78,5 @@ Your app is ready to be deployed!
 We use Vercel as a host to deploy photobook FE app.
 url: https://photobook-app-fe.vercel.app/
 
+To fully use the App, it is advised to start a localhost backend instance to expose APIs
+
