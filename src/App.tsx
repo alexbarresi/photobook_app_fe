@@ -1,9 +1,10 @@
-import { Route, Routes } from "react-router-dom";
 import "./styles/App.css";
 import Home from "./pages/Home";
 import PhotoView from "./pages/PhotoView";
 
-function App() {
+import { Route, Routes } from "react-router-dom";
+
+const App = () => {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +22,6 @@ function App() {
       </>
     </div>
   );
-}
+};
 
 export default App;

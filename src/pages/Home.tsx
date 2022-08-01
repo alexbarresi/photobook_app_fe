@@ -1,11 +1,11 @@
 import AlbumCard from "../components/AlbumCard";
 import InputForm from "../components/InputForm";
-import { AlbumType } from "../types/Album.types";
+import { AlbumType } from "../dataModels/types/Album.types";
 
 import { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
 
-function Home() {
+const Home: React.FC = () => {
   const [Albums, setAlbums] = useState([]);
   const [Error, setError] = useState({});
 
@@ -28,30 +28,25 @@ function Home() {
   };
 
   useEffect(() => {
-    if (window.sessionStorage.getItem("Albums") != null && window.sessionStorage.getItem("Albums") !== '')
+    if (
+      window.sessionStorage.getItem("Albums") != null &&
+      window.sessionStorage.getItem("Albums") !== ""
+    )
       setAlbums(JSON.parse(window.sessionStorage.getItem("Albums") as string));
   }, []);
 
   return (
-    <>
-      <Container>
-        <Row>
-          <InputForm retrieveAlbums={retrieveAlbums}></InputForm>
-        </Row>
-        <Row className="d-flex justify-content-center justify-content-md-start">
-          {/* {Albums.length > 0
-            ? Albums.map((album: AlbumType) => (
-                <AlbumCard key={album.id} album={album} />
-              ))
-            : "Loading..."} */}
-
-          {Albums.map((album: AlbumType) => (
-            <AlbumCard key={album.id} album={album} />
-          ))}
-        </Row>
-      </Container>
-    </>
+    <Container>
+      <Row>
+        <InputForm retrieveAlbums={retrieveAlbums}></InputForm>
+      </Row>
+      <Row className="d-flex justify-content-center justify-content-md-start">
+        {Albums.map((album: AlbumType) => (
+          <AlbumCard key={album.id} album={album} />
+        ))}
+      </Row>
+    </Container>
   );
-}
+};
 
 export default Home;

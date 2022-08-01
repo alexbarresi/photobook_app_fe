@@ -1,24 +1,18 @@
+import { InputFormProps } from "../dataModels/interfaces/Props.interfaces";
+
 import { useState } from "react";
-import {Button, Form, Col, Row} from "react-bootstrap";
+import { Button, Form, Col, Row } from "react-bootstrap";
 
-interface InputFormProps {
-  retrieveAlbums: (a: number) => void;
-}
-
-function InputForm({ retrieveAlbums }: InputFormProps) {
+const InputForm: React.FC<InputFormProps> = ({ retrieveAlbums }) => {
   const [userId, setUserId] = useState("");
-  const [disableButton, setDisableButton] = useState(true);
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const { value } = e.target;
-    value == null || value == ""
-      ? setDisableButton(true)
-      : setDisableButton(false);
     setUserId(value);
   };
 
-  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {    
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     resetInput();
 
@@ -31,7 +25,6 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
 
   const resetInput = () => {
     setUserId("");
-    setDisableButton(true);
   };
 
   return (
@@ -50,7 +43,7 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
           </Form.Group>
         </Col>
         <Col lg={1} xs={3} md={2} className="input-button">
-          <Button variant="success" type="submit" disabled={disableButton}>
+          <Button variant="success" type="submit" disabled={!userId}>
             Search
           </Button>
         </Col>
@@ -64,6 +57,6 @@ function InputForm({ retrieveAlbums }: InputFormProps) {
       </Row>
     </Form>
   );
-}
+};
 
 export default InputForm;

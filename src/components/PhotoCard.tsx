@@ -1,13 +1,9 @@
-import { PhotoType } from "../types/Photo.types";
+import { PhotoCard } from "../dataModels/interfaces/Props.interfaces";
 
 import { Card, Modal } from "react-bootstrap";
 import { useState } from "react";
 
-interface Props {
-  photo: PhotoType;
-}
-
-const PhotoCard: React.FC<Props> = ({ photo }) => {
+const PhotoCard: React.FC<PhotoCard> = ({ photo }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
