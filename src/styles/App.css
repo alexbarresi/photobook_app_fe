@@ -27,8 +27,16 @@
 
 .card-title {
   min-height: 75px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
+.card-title:hover{
+  overflow: visible; 
+  white-space: normal;
+  height:auto;  /* just added this line */
+}
 .card-button {
   align-self: auto;
 }
@@ -38,7 +46,7 @@ button.btn {
 }
 
 .main-card {
-  min-height: 250px;
+  min-height: 200px;
   width: 16rem;
   margin: 2%;
 }
@@ -53,7 +61,7 @@ button.btn {
 }
 
 .photo-card {
-  min-height: 370px;
+  min-height: 300px;
   width: 16rem;
   margin: 2%;
 }
@@ -69,4 +77,4 @@ button.btn {
 .my-2 {
   flex-basis: 33.3%;
   min-width: 15.3%;
- }
+}

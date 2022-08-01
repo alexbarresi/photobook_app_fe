@@ -32,6 +32,7 @@ const PhotoView: React.FC = () => {
               <img src={LeftArrow} /> Back
             </Button>
           </Col>
+          <Col className="justify-content-center align-self-center" lg={10} md={8}><h3>Hint: You can click on the single card to open the full image</h3></Col>
         </Row>
         <Row className="d-flex justify-content-center">
           <h2 className="d-flex flex-column text-center">{AlbumTitle}</h2>
